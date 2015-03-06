@@ -116,11 +116,11 @@ var sliderChange = function(sliderValue) {
     }
     // *** Task 19 ***
 };
-var textChange = function(textValue,idvalue) {
-    consoleLog("text changed: " + textValue);
-    consoleLog("idvalue: " + idvalue);
+var textChange = function(textValue,test) {
+    //consoleLog("text changed: " + {{firsname}});
+    //consoleLog("idvalue: " + idvalue);
     // *** Task 14 ***
-    $("#"+idvalue).valueOf(textValue);
+    //$("#"+idvalue).valueOf(textValue);
     // *** Task 14 ***
     
     // *** Task 19 ***

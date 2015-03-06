@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+</head>
+
+<body>
+
+<div ng-app="" ng-controller="personController">
+
+First Name: <input type="text" ng-model="firstName"><br>
+Last Name: <input type="text" ng-model="lastName"><br>
+<br>
+Full Name: {{firstName + " " + lastName}}
+
+</div>
+
+<script>
+function personController($scope) {
+    $scope.firstName = "John",
+    $scope.lastName = "Doe"
+}
+</script>
+
+</body>
+</html>
+
+
+<script>
+  angular.module('changeExample', [])
+    .controller('ExampleController', ['$scope', function($scope) {
+      $scope.counter = 0;
+      $scope.change = function() {
+        $scope.counter++;
+      };
+    }]);
+</script>
+ <script src="app/jquery.min.js"></script>
+        <script src="app/bootstrap.min.js"></script>
+        <script src="app/lodash.min.js"></script>
+        <script src="app/angular.min.js"></script>
+        <script src="app/eggly-app.start.js"></script>
+        <script src="app.js" type="text/javascript" language="javascript"></script>
+<script src="http://demo.kaazing.com/lib/client/javascript/StompJms.js" type="text/javascript" language="javascript"></script>
+<script src="jquery-ui.js"></script>
+<div ng-controller="ExampleController">
+  <input type="checkbox" ng-model="confirmed" ng-change="change()" id="ng-change-example1" />
+  <input type="checkbox" ng-model="confirmed" id="ng-change-example2" />
+  <label for="ng-change-example2">Confirmed</label><br />
+  <tt>debug = {{confirmed}}</tt><br/>
+  <tt>counter = {{counter}}</tt><br/>
+</div>
+

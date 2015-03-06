@@ -24,6 +24,7 @@
                 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
                 <h1>{{hello}}</h1>
                 {{currentCategory.name}}
+                    {{firstname}}
                     <!--div ng-repeat="bookmark in bookmarks | filter:{category:currentCategory.name}">
                         <button type="button" class="close">&times;</button>
                         <button type="button" class="btn btn-link"><span class="glyphicon glyphicon-pencil"></span>
@@ -33,6 +34,11 @@
                 </div>
             </div>
         </div>
+         <br>
+        First Name: <input type="text" ng-model="firstName"><br>
+Last Name: <input type="text" ng-model="lastName"><br>
+<br>
+
 
         <!-- script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
@@ -75,10 +81,25 @@
     
     <div>
 	First Name <input id="autocomplete" title="type &quot;a&quot;"onchange="textChange(this.value)">
-        Second Name <input id="autocomplete" title="type &quot;a&quot;"onchange="textChange(this.value,this.id)">
+               Second Name <input id="autocomplete" title="type &quot;a&quot;"onchange="textChange(this.value,this.id)">
+         <br>
+        First Name: <input type="text" ng-model="firstName"><br>
+Last Name: <input type="text" ng-model="lastName"><br>
+<br>
+Full Name: {{fullName()}}
+        Full Name: {{fullName()}}
+    <h1>{{hello}}1</h1>  
         
 </div>
     </body>
+ <div>
 
+First Name: {{firstname}}---- <input type="text" ng-model="firstname" onchange="textChange(this.value,"firstname")><br>
+Last Name: <input type="text" ng-model="lastName"><br>
+<br>
+Full Name: {{fullName()}}
+    <h1>{{hello}}2</h1>  
+     
+</div>
 <h1>YOUR COMPONENTS:</h1>
 </html>

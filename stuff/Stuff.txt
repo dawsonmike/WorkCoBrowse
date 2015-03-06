@@ -1,0 +1,3 @@
+http://localhost:8001/alliance/
+
+http://leftshift.io/8-tips-for-angular-js-beginners/

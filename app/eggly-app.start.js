@@ -21,6 +21,7 @@ angular.module('Eggly', [
         ];
 
         $scope.currentCategory = null;
+        $scope.firstname = 'mike';
 
         function isCurrentCategory(category) {
             return $scope.currentCategory !== null && category.name === $scope.currentCategory.name;
