@@ -21,22 +21,35 @@
                         </li>
                     </ul>
                 </div>
-                
+                <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                <h1>{{hello}}</h1>
+                {{currentCategory.name}}
+                    {{firstname}}
+                    <!--div ng-repeat="bookmark in bookmarks | filter:{category:currentCategory.name}">
+                        <button type="button" class="close">&times;</button>
+                        <button type="button" class="btn btn-link"><span class="glyphicon glyphicon-pencil"></span>
+                        </button>
+                        <a href="{{bookmark.url}}" target="_blank">{{bookmark.title}}</a>
+                    </div-->
+                </div>
             </div>
         </div>
          <br>
         First Name: <input type="text" ng-model="firstName"><br>
 Last Name: <input type="text" ng-model="lastName"><br>
 <br>
-     <h1>Herer</h1>
-        Mikeys<br>
-    
-        
+     <h1>fffffffffffff</h1>
+        Mikey<br>
+     First Name <input id="autocomplete" title="type &quot;a&quot;"onchange="mike()">
     here {{$scope.firstname}}
-First Name: {{firstname}}---- <input type="text" input id="firstname" ng-model="firstname" ng-change="mike(firstname,'firstname')"><br>
-Last Name: {{lastname}}---- <input type="text" input id="lastname" ng-model="lastname" ng-change="mike(lastname,'lastname')"><br>
+First Name: {{firstname}}---- <input type="text" ng-model="firstname" ng-change="mike()"><br>
+Last Name: <input type="text" ng-model="lastName"><br>
 <br>
 
+        <!-- script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script-->
         <script src="app/jquery.min.js"></script>
         <script src="app/bootstrap.min.js"></script>
         <script src="app/lodash.min.js"></script>
@@ -45,7 +58,11 @@ Last Name: {{lastname}}---- <input type="text" input id="lastname" ng-model="las
         <script src="app.js" type="text/javascript" language="javascript"></script>
 <script src="http://demo.kaazing.com/lib/client/javascript/StompJms.js" type="text/javascript" language="javascript"></script>
 <script src="jquery-ui.js"></script>
-    </body> 
+    </body>
+    <body> <H1>Moopsie</H1>
+        <h1>{{hello}}</h1>
+    {{currentCategory.name}}
+    </body>
     
     <body onload="doConnect()">
         <!-- Task 1 -->
@@ -81,6 +98,16 @@ Full Name: {{fullName()}}
         
 </div>
     </body>
- 
+ <div>
+Mikey<br>
+     First Name <input id="autocomplete" title="type &quot;a&quot;"onchange="textChange(this.value)">
+    here {{$scope.firstname}}
+First Name: {{$scope.firstname}}---- <input type="text" ng-model="$scope.firstname" ng-change="textChange("hi")"><br>
+Last Name: <input type="text" ng-model="lastName"><br>
+<br>
+Full Name: {{fullName()}}
+    <h1>{{hello}}2</h1>  
+     
+</div>
 <h1>YOUR COMPONENTS:</h1>
 </html>

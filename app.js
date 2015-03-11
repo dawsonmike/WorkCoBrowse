@@ -16,6 +16,12 @@ var MESSAGE_PROPERTIES = {
 var MESSAGE_TYPES = {
     "sliderMoved": "SLIDER_MOVED"
 };
+
+var mike = function(){
+    alert('mikehiiiit');
+    
+    
+};
 /*** Task 9 ***/
 
 /*** Task 10 ***/
@@ -67,13 +73,14 @@ var handleException = function (e) {
 // *** Task 6a ***
 var handleTopicMessage = function(message) {
     // *** Task 12 ***
+    var test = "firstname"
     if (message.getStringProperty(MESSAGE_PROPERTIES.userId) != userId) {
-        consoleLog("Message received: " + message.getText());
+        //consoleLog("Message received: " + message.getText());
         // *** Task 8b ***
-        $("#autocomplete").val(message.getText());
+        $("#"+test).val(message.getText());
         // *** Task 8b ***
         // *** Task 15 ***
-        $("#pic").width(message.getText());
+        //$("#pic").width(message.getText());
         // *** Task 15 ***        
     }
     // *** Task 12 ***
@@ -116,8 +123,11 @@ var sliderChange = function(sliderValue) {
     }
     // *** Task 19 ***
 };
-var textChange = function(textValue,test) {
-    //consoleLog("text changed: " + {{firsname}});
+var textChange = function(text) {
+   alert(text);
+    //alert($scope.firstname);
+    alert('hi again');
+   //consoleLog("text changed: "$scope.firstname);
     //consoleLog("idvalue: " + idvalue);
     // *** Task 14 ***
     //$("#"+idvalue).valueOf(textValue);
@@ -127,7 +137,7 @@ var textChange = function(textValue,test) {
     if (!sending) {
         sending = true;
         // *** Task 8a ***
-        doSend(session.createTextMessage(textValue));
+        doSend(session.createTextMessage($scope));
         // *** Task 8a ***        
     }
     else {
@@ -187,6 +197,7 @@ var doConnect = function() {
 
                     // *** Task 6b ***
                     topicConsumer.setMessageListener(handleTopicMessage);
+                    consoleLog("Topic Listener created add...");
                     // *** Task 6b ***                        
                     
                     connection.start(function() {

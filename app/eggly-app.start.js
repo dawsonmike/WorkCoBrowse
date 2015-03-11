@@ -22,6 +22,12 @@ angular.module('Eggly', [
 
         $scope.currentCategory = null;
         $scope.firstname = 'mike';
+    $scope.lastname = 'dee';
+    $scope.mike = function(text,field){
+    alert($scope.firstname);
+    textChange('hi');
+    
+};
 
         function isCurrentCategory(category) {
             return $scope.currentCategory !== null && category.name === $scope.currentCategory.name;
