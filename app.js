@@ -10,7 +10,8 @@ var DEBUG_TO_SCREEN = true;
 var MESSAGE_PROPERTIES = {
     "messageType": "MESSAGE_TYPE",
     "userId": "USERID",
-    "sliderPos": "SLIDER_POS"
+    "sliderPos": "SLIDER_POS",
+    "fieldName": "FIELD_NAME"
 };
 
 var MESSAGE_TYPES = {
@@ -22,6 +23,7 @@ var mike = function(){
     
     
 };
+var fieldName;
 /*** Task 9 ***/
 
 /*** Task 10 ***/
@@ -73,11 +75,15 @@ var handleException = function (e) {
 // *** Task 6a ***
 var handleTopicMessage = function(message) {
     // *** Task 12 ***
-    var test = "firstname"
+    var field = message.getStringProperty(MESSAGE_PROPERTIES.fieldName);
+  //  alert(message.getStringProperty(MESSAGE_PROPERTIES.userId));
+//    alert(message.getStringProperty(MESSAGE_PROPERTIES.fieldName));
+    //alert('message' +field);
     if (message.getStringProperty(MESSAGE_PROPERTIES.userId) != userId) {
         //consoleLog("Message received: " + message.getText());
         // *** Task 8b ***
-        $("#"+test).val(message.getText());
+        $("#"+field).val(message.getText());
+        
         // *** Task 8b ***
         // *** Task 15 ***
         //$("#pic").width(message.getText());
@@ -93,6 +99,11 @@ var handleTopicMessage = function(message) {
 var doSend = function(message) {
     /*** Task 11 ***/
     message.setStringProperty(MESSAGE_PROPERTIES.userId, userId);
+    if(fieldName !=null){
+    message.setStringProperty(MESSAGE_PROPERTIES.fieldName, fieldName);
+    }
+     
+    
     /*** Task 11 ***/    
     topicProducer.send(null, message, DeliveryMode.NON_PERSISTENT, 3, 1, function() {
         // *** Task 18 ***
@@ -124,9 +135,9 @@ var sliderChange = function(sliderValue) {
     // *** Task 19 ***
 };
 var textChange = function(text) {
-   alert(text);
+  // alert(text);
     //alert($scope.firstname);
-    alert('hi again');
+    //alert('hi again');
    //consoleLog("text changed: "$scope.firstname);
     //consoleLog("idvalue: " + idvalue);
     // *** Task 14 ***
@@ -137,7 +148,7 @@ var textChange = function(text) {
     if (!sending) {
         sending = true;
         // *** Task 8a ***
-        doSend(session.createTextMessage($scope));
+        doSend(session.createTextMessage(text));
         // *** Task 8a ***        
     }
     else {
@@ -159,10 +170,16 @@ var sendFromQueue = function() {
         sending = false;
     }
 };
+
+var setField = function(field){
+ fieldName = field;
+    //alert(fieldName);
+};
 // *** Task 17 ***
 
 // Connecting...
 //
+
 var doConnect = function() {
     // Connect to JMS, create a session and start it.
     //

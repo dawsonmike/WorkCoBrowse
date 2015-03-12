@@ -24,8 +24,13 @@ angular.module('Eggly', [
         $scope.firstname = 'mike';
     $scope.lastname = 'dee';
     $scope.mike = function(text,field){
-    alert($scope.firstname);
-    textChange('hi');
+       // alert(field);
+   // alert($scope.firstname);
+        //message.setStringProperty(MESSAGE_PROPERTIES.fieldName, firstname);
+        //message.setStringProperty(MESSAGE_PROPERTIES.userId, mikey);
+        setField(field);
+    textChange(text);
+        
     
 };
 
