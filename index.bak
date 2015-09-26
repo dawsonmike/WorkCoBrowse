@@ -99,12 +99,12 @@ Full Name: {{fullName()}}
 </div>
     </body>
  <div>
-Mikey <br>
+Mikey<br>
      First Name <input id="autocomplete" title="type &quot;a&quot;"onchange="textChange(this.value)">
     here {{$scope.firstname}}
 First Name: {{$scope.firstname}}---- <input type="text" ng-model="$scope.firstname" ng-change="textChange("hi")"><br>
 Last Name: <input type="text" ng-model="lastName"><br>
-<br><!-- test -->
+<br>
 Full Name: {{fullName()}}
     <h1>{{hello}}2</h1>  
      
